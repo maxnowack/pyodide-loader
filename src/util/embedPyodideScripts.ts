@@ -10,7 +10,7 @@ export function embedPyodideScripts(baseURL: string, pymod: PyodideModule) {
 	// Pack the module into the window. This is required for Emscripten to work
 	// (https://kripken.github.io/emscripten-site/docs/api_reference/module.html)
 	let loadPackagePromise = Promise.resolve()
-	;(window as any).Module = pymod
+	;(global as any).Module = pymod
 	/**
 	 *
 	 * @param {string[]} names the module names
